@@ -14,6 +14,7 @@
 int main(int argc, const char * argv[]) {
 
     
+    
    
         
     BOOL REPLAY = YES;
@@ -32,6 +33,32 @@ int main(int argc, const char * argv[]) {
             REPLAY = NO;
             break;
         }
+        
+        
+        if([menu containsString:@"new"]){
+            
+            
+            NSLog(@"Enter full name");
+            
+            char input1[255];
+            fgets(input1, 255, stdin);
+            NSString *newName = [NSString stringWithCString:input1 encoding: NSUTF8StringEncoding];
+            [newName stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceAndNewlineCharacterSet];
+            
+            
+            
+            NSLog(@"Enter email");
+            char input2[255];
+            fgets(input2, 255, stdin);
+            NSString *newEmail = [NSString stringWithCString:input2 encoding: NSUTF8StringEncoding];
+            [newEmail stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceAndNewlineCharacterSet];
+            
+            Contact *newContact = [[Contact alloc] init];
+            newContact.name = newName;
+            newContact.email = newEmail;
+            
+        }
+        
         
     }
     

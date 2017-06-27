@@ -9,5 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface Contact : NSObject
+@property (nonatomic) NSString *name;
+@property (nonatomic) NSString *email;
+
 
 @end

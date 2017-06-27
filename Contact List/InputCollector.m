@@ -12,6 +12,8 @@
 
 -(NSString *)inputForPrompt:(NSString *)promptString{
     
+    
+    
     NSLog(@"%@",promptString);
     
     char input[255];    
@@ -20,10 +22,9 @@
     NSString *newString = [NSString stringWithCString:input encoding: NSUTF8StringEncoding];
     [newString stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceAndNewlineCharacterSet];
     
-   
-    
     
     return newString;
+    
 }
 
 
