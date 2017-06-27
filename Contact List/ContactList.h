@@ -10,6 +10,6 @@
 #import "Contact.h"
 
 @interface ContactList : NSObject
-@property NSMutableArray *contactArray;
+@property (nonatomic) NSMutableArray *contactArray;
 -(void)addContact:(Contact *)newContact;
 @end

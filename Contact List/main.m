@@ -17,6 +17,15 @@ int main(int argc, const char * argv[]) {
     ContactList *newContactArray = [[ContactList alloc] init];
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
  
     
     
@@ -29,11 +38,12 @@ int main(int argc, const char * argv[]) {
     
     InputCollector *input = [[InputCollector alloc] init];
     
-    NSString *menu = [input inputForPrompt:@"\n - Create a new contact list\n - List all contacts \n - Quit - Exit Application\n"];
+    NSString *menu = [input inputForPrompt:@"\n new - Create a new contact list\n list - List all contacts \n quit - Exit Application\n"];
     
     
     
         if([menu containsString:@"quit"]){
+            NSLog(@"Thank you, bye!");
             REPLAY = NO;
             break;
         }
@@ -62,6 +72,16 @@ int main(int argc, const char * argv[]) {
             newContact.email = newEmail;
             
             [newContactArray addContact:newContact];
+            
+        }
+        
+        
+        
+        if([menu containsString:@"list"]){
+            
+            
+            NSLog(@"%@", newContactArray.contactArray);
+            
             
         }
         

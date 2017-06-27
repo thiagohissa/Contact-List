@@ -11,11 +11,34 @@
 
 @implementation ContactList
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        
+        _contactArray = [NSMutableArray array]; 
+        
+    }
+    return self;
+}
+
+
+
+
 -(void)addContact:(Contact *)newContact {
     
-    [_contactArray addObject:newContact];
+    newContact.name = [newContact.name substringToIndex:newContact.name.length-1];
+    newContact.email = [newContact.email substringToIndex:newContact.email.length-1];
     
+    
+    [_contactArray addObject:[NSString stringWithFormat: @"%u: Name = %@ | Email = %@", arc4random_uniform(9999)+1000, newContact.name, newContact.email]];
+          
 }
+
+
+
+
+
 
 
 
