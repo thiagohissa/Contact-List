@@ -38,18 +38,20 @@ int main(int argc, const char * argv[]) {
     
     InputCollector *input = [[InputCollector alloc] init];
     
-    NSString *menu = [input inputForPrompt:@"\n new - Create a new contact list\n list - List all contacts \n quit - Exit Application\n"];
+    NSString *menu = [input inputForPrompt:@"\n new - Create a new contact list\n show - Find contact by ID \n list - List all contacts \n quit - Exit Application\n"];
     
     
-    
-        if([menu containsString:@"quit"]){
+        
+        if([[menu lowercaseString] containsString:@"quit"]){
             NSLog(@"Thank you, bye!");
             REPLAY = NO;
             break;
         }
         
         
-        if([menu containsString:@"new"]){
+        
+        // User will enter name & email which will be the properties of a Contact instance which will be stored at ContactList
+        if([[menu lowercaseString] containsString:@"new"]){
             
             
             NSLog(@"Enter full name");
@@ -77,13 +79,30 @@ int main(int argc, const char * argv[]) {
         
         
         
-        if([menu containsString:@"list"]){
-            
+        
+        // Prints the array (property) from ContactList
+        if([[menu lowercaseString] containsString:@"list"]){
             
             NSLog(@"%@", newContactArray.contactArray);
             
-            
         }
+        
+        
+        
+        
+        // Search and show contact with specific id number (id number defined at ContactList when adding to array)
+        if([[menu lowercaseString] containsString:@"show"]){
+            NSLog(@"Enter contact id number:");
+            char input[255];
+            fgets(input, 255, stdin);
+            NSString *idValue = [NSString stringWithCString:input encoding: NSUTF8StringEncoding];
+            [idValue stringByTrimmingCharactersInSet:NSCharacterSet.whitespaceAndNewlineCharacterSet];
+            
+            
+            [newContactArray showContactById:[idValue intValue]];
+        }
+        
+        
         
         
     }

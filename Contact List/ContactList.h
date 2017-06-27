@@ -12,4 +12,5 @@
 @interface ContactList : NSObject
 @property (nonatomic) NSMutableArray *contactArray;
 -(void)addContact:(Contact *)newContact;
+-(void)showContactById: (int)idValue;
 @end

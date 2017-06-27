@@ -25,6 +25,12 @@
 
 
 
+
+
+
+
+
+// ADD contact to Mutable array
 -(void)addContact:(Contact *)newContact {
     
     newContact.name = [newContact.name substringToIndex:newContact.name.length-1];
@@ -37,6 +43,25 @@
 
 
 
+
+
+
+// Search and show contact with specific id number (id number defined at ContactList when adding to array)
+-(void)showContactById: (int)idValue{
+    
+    NSRange range = NSMakeRange(0, 4);
+    
+    for(int i = 0; i < [_contactArray count]; i++){
+        
+        int first4Numbers = [[_contactArray[i] substringWithRange:range] intValue];
+        if(first4Numbers == idValue){
+            NSLog(@"Found contact id: %@", _contactArray[i]);
+        }
+        
+        
+    }
+    
+}
 
 
 
