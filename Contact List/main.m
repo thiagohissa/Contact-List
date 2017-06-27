@@ -14,11 +14,15 @@
 int main(int argc, const char * argv[]) {
 
     
+    ContactList *newContactArray = [[ContactList alloc] init];
     
-   
-        
+    
+ 
+    
+    
+    
+    // While Loop statrs here and it will be executed until user input = 'quit' REPLAY = NO
     BOOL REPLAY = YES;
-    
     while(REPLAY){
         
     
@@ -56,6 +60,8 @@ int main(int argc, const char * argv[]) {
             Contact *newContact = [[Contact alloc] init];
             newContact.name = newName;
             newContact.email = newEmail;
+            
+            [newContactArray addContact:newContact];
             
         }
         

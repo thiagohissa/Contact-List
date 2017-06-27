@@ -7,7 +7,16 @@
 //
 
 #import "ContactList.h"
+#import "Contact.h"
 
 @implementation ContactList
+
+-(void)addContact:(Contact *)newContact {
+    
+    [_contactArray addObject:newContact];
+    
+}
+
+
 
 @end
