@@ -38,7 +38,7 @@ int main(int argc, const char * argv[]) {
     
     InputCollector *input = [[InputCollector alloc] init];
     
-    NSString *menu = [input inputForPrompt:@"\n new - Create a new contact list\n show - Find contact by ID \n list - List all contacts \n quit - Exit Application\n"];
+    NSString *menu = [input inputForPrompt:@"\n\n new - Create a new contact list\n show - Find contact by ID \n list - List all contacts \n quit - Exit Application\n\n Enter an option from menu: "];
     
     
         
@@ -105,8 +105,24 @@ int main(int argc, const char * argv[]) {
         
         
         
-    }
+        
+        
+        
+        
+        
+        
+        
+       
+    }//End of while loop
     
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
     return 0;
 }

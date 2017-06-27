@@ -54,14 +54,22 @@
     for(int i = 0; i < [_contactArray count]; i++){
         
         int first4Numbers = [[_contactArray[i] substringWithRange:range] intValue];
+        
         if(first4Numbers == idValue){
-            NSLog(@"Found contact id: %@", _contactArray[i]);
+            NSLog(@"Contact found: %@", _contactArray[i]);
+            
         }
-        
-        
+        else{
+            NSLog(@"Contact not found");
+        }
     }
-    
 }
+
+
+
+
+
+
 
 
 
